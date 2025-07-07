@@ -41,7 +41,7 @@ module.exports = async (req, res) => {
 
     // Validación básica (ajustada a los nuevos nombres)
     if (!name || !email || !message) { 
-        res.status(400).json({ message: 'Por favor, completa los campos requeridos (Nombre, Apellidos, Asunto, email, Mensaje).' });
+        res.status(400).json({ message: 'Por favor, completa los campos requeridos (Nombre, email y mensaje).' });
         return;
     }
 
