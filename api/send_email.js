@@ -31,7 +31,7 @@ module.exports = async (req, res) => {
     }
 
     // --- ¡CAMBIOS AQUÍ! Extraer los datos con los nombres de tu formulario React ---
-    const { nombre, apellidos, asunto, email, empresa, mensaje } = data;
+    const { name,email,message, atack } = data;
 
     if (atack && atack.trim().length > 0) {
         console.error('Atack detected:', atack);
@@ -40,7 +40,7 @@ module.exports = async (req, res) => {
     }
 
     // Validación básica (ajustada a los nuevos nombres)
-    if (!name || !email || !message) { // 'empresa' es opcional
+    if (!name || !email || !message) { 
         res.status(400).json({ message: 'Por favor, completa los campos requeridos (Nombre, Apellidos, Asunto, email, Mensaje).' });
         return;
     }
@@ -52,10 +52,10 @@ module.exports = async (req, res) => {
             subject: `Mensaje de Contacto - de ${name}`, // Asunto más detallado
             html: `
                 <p>Has recibido un nuevo mensaje desde el formulario de grupo de apoyo:</p>
-                <p><strong>Nombre:</strong> ${nombre}</p>
+                <p><strong>Nombre:</strong> ${name}</p>
                 <p><strong>Correo Electrónico:</strong> ${email}</p>
                 <p><strong>Mensaje:</strong></p>
-                <p>${mensaje}</p>
+                <p>${message}</p>
                 <br>
                 <p>---</p>
                 <p>Este correo fue enviado desde tu formulario de contacto del grupo de apoyo.</p>
