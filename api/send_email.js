@@ -40,27 +40,25 @@ module.exports = async (req, res) => {
     }
 
     // Validación básica (ajustada a los nuevos nombres)
-    if (!nombre || !apellidos || !asunto || !email || !mensaje) { // 'empresa' es opcional
+    if (!name || !email || !message) { // 'empresa' es opcional
         res.status(400).json({ message: 'Por favor, completa los campos requeridos (Nombre, Apellidos, Asunto, email, Mensaje).' });
         return;
     }
 
     try {
         const emailResponse = await resend.emails.send({
-            from: 'Tu Portafolio <portafolioBLAB@resend.dev>',
-            to: 'brandonleonardobarrera@gmail.com',
-            subject: `Mensaje de Contacto - ${asunto} de ${nombre} ${apellidos}`, // Asunto más detallado
+            from: 'Grupo de apoyo <GrupoDeApoyo@resend.dev>',
+            to: 'asisglez12@gmail.com',
+            subject: `Mensaje de Contacto - de ${name}`, // Asunto más detallado
             html: `
-                <p>Has recibido un nuevo mensaje desde el formulario de contacto de tu portafolio:</p>
-                <p><strong>Nombre Completo:</strong> ${nombre} ${apellidos}</p>
+                <p>Has recibido un nuevo mensaje desde el formulario de grupo de apoyo:</p>
+                <p><strong>Nombre:</strong> ${nombre}</p>
                 <p><strong>Correo Electrónico:</strong> ${email}</p>
-                <p><strong>Asunto:</strong> ${asunto}</p>
-                ${empresa ? `<p><strong>Empresa:</strong> ${empresa}</p>` : ''}
                 <p><strong>Mensaje:</strong></p>
                 <p>${mensaje}</p>
                 <br>
                 <p>---</p>
-                <p>Este correo fue enviado desde tu formulario de contacto del portafolio.</p>
+                <p>Este correo fue enviado desde tu formulario de contacto del grupo de apoyo.</p>
             `,
         });
 
