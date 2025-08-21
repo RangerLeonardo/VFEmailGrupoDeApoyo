@@ -1,5 +1,5 @@
 {
-  "name": "vercelfunctionemail",
+  "name": "vfemailgrupodeapoyo",
   "version": "1.0.0",
   "description": "Magic",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RangerLeonardo/VercelFunctionEmail.git"
+    "url": "git+https://github.com/RangerLeonardo/VFEmailGrupoDeApoyo"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RangerLeonardo/VercelFunctionEmail/issues"
+    "url": "https://github.com/RangerLeonardo/VFEmailGrupoDeApoyo/issues"
   },
-  "homepage": "https://github.com/RangerLeonardo/VercelFunctionEmail#readme",
+  "homepage": "https://github.com/RangerLeonardo/VFEmailGrupoDeApoyo#readme",
   "dependencies": {
     "resend": "^4.5.2"
   }
